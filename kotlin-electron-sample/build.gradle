@@ -1,0 +1,42 @@
+buildscript {
+    ext.kotlin_version = '1.3.50'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+group 'cz.zelenikr'
+version '1.0-SNAPSHOT'
+
+ext.node_dir = 'node'
+ext.resources_dir = 'src/main/resources'
+
+apply plugin: 'kotlin2js'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version:javadoc"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+}
+
+compileKotlin2Js.kotlinOptions {
+    outputFile = "${projectDir}/${node_dir}/main.js"
+    moduleKind = "commonjs"
+    sourceMap = true
+    noStdlib = false
+}
+
+task copyResources(type: Copy) {
+    from "${projectDir}/${resources_dir}/."
+    into "${projectDir}/${node_dir}"
+}
+
+jar {}
