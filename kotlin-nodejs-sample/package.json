@@ -1,0 +1,19 @@
+{
+  "name": "kotlin-nodejs-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node/index.js",
+  "dependencies": {
+    "kotlin": "^1.3.50",
+    "nodemon": "^1.19.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon node/kotlin-nodejs-sample/kotlin/kotlin-nodejs-sample.js",
+    "start": "node node/kotlin-nodejs-sample/kotlin/kotlin-nodejs-sample.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
