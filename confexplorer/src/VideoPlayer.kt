@@ -25,6 +25,11 @@ class VideoPlayerComponent(props: VideoPlayerProps) : RComponent<VideoPlayerProp
             styledButton {
                 css {
                     display = Display.block
+                    borderRadius = 0.3.rem
+                    borderColor = Color("#888")
+                    borderWidth = 0.1.rem
+                    marginBottom = 0.5.rem
+                    padding = "0.3rem 0.6rem"
                     backgroundColor = if (props.unwatchedVideo) Color.lightGreen else Color.red
                 }
                 attrs {
