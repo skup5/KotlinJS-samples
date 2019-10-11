@@ -1,8 +1,5 @@
 import kotlinx.css.*
-import react.RBuilder
-import react.RComponent
-import react.RProps
-import react.RState
+import react.*
 import react.dom.*
 import styled.css
 import styled.styledDiv
@@ -11,7 +8,7 @@ import styled.styledDiv
  *
  * @author Roman Zelenik
  */
-class App : RComponent<RProps, RState>() {
+class App : RComponent<RProps, AppState>() {
 
     val unwatchedVideos = listOf(
             Video(1, "Building and breaking things", "John Doe", "https://youtu.be/PsaFVLr8t4E"),
@@ -30,11 +27,27 @@ class App : RComponent<RProps, RState>() {
 
             h3 { +"Videos to watch" }
 
-            videoList { videos = unwatchedVideos }
+            videoList {
+                videos = unwatchedVideos
+                selectedVideo = state.currentVideo
+                onSelectVideo = { video ->
+                    setState {
+                        currentVideo = video
+                    }
+                }
+            }
 
             h3 { +"""Videos watched""" }
 
-            videoList { videos = watchedVideos }
+            videoList {
+                videos = watchedVideos
+                selectedVideo = state.currentVideo
+                onSelectVideo = { video ->
+                    setState {
+                        currentVideo = video
+                    }
+                }
+            }
 
         }
 
@@ -50,4 +63,8 @@ class App : RComponent<RProps, RState>() {
             img(src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder") {}
         }
     }
+}
+
+interface AppState : RState {
+    var currentVideo: Video?
 }
