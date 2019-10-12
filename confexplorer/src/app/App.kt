@@ -83,3 +83,7 @@ interface AppState : RState {
     var unwatchedVideos: List<Video>
     var watchedVideos: List<Video>
 }
+
+fun RBuilder.app():ReactElement{
+    return child(App::class){}
+}
