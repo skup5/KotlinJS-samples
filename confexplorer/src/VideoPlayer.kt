@@ -1,8 +1,8 @@
+import deps.*
 import kotlinx.css.*
 import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.h3
-import react.dom.img
 import styled.css
 import styled.styledButton
 import styled.styledDiv
@@ -44,7 +44,32 @@ class VideoPlayerComponent(props: VideoPlayerProps) : RComponent<VideoPlayerProp
                 }
             }
 
-            img(src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder") {}
+            styledDiv {
+                css {
+                    display = Display.flex
+                    marginBottom = 0.5.rem
+                }
+
+                EmailShareButton {
+                    attrs.url = props.video.videoUrl
+                    EmailIcon {
+                        attrs.size = 32
+                        attrs.round = true
+                    }
+                }
+
+                FacebookShareButton {
+                    attrs.url = props.video.videoUrl
+                    FacebookIcon {
+                        attrs.size = 32
+                        attrs.round = true
+                    }
+                }
+            }
+
+            ReactPlayer {
+                attrs.url = props.video.videoUrl
+            }
         }
     }
 

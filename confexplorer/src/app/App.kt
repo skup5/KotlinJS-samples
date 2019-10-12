@@ -1,8 +1,12 @@
-import kotlinx.css.*
+package app
+
+import Video
 import react.*
-import react.dom.*
-import styled.css
-import styled.styledDiv
+import react.dom.div
+import react.dom.h1
+import react.dom.h3
+import videoList
+import videoPlayer
 
 /**
  *
@@ -73,7 +77,6 @@ class App : RComponent<RProps, AppState>() {
         )
     }
 }
-
 
 interface AppState : RState {
     var currentVideo: Video?

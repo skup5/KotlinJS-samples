@@ -1,6 +1,11 @@
+import kotlinx.css.Cursor
+import kotlinx.css.cursor
 import kotlinx.html.js.onClickFunction
 import react.*
+import react.dom.a
 import react.dom.p
+import styled.css
+import styled.styledP
 
 /**
  *
@@ -9,13 +14,19 @@ import react.dom.p
 class VideoListComponent(props: VideoListProps) : RComponent<VideoListProps, RState>(props) {
     override fun RBuilder.render() {
         props.videos.forEach { video ->
-            p {
+            styledP {
+                css {
+                    cursor = Cursor.pointer
+                }
+
                 key = video.id.toString()
+
                 attrs {
                     onClickFunction = {
                         props.onSelectVideo(video)
                     }
                 }
+
                 if (video == props.selectedVideo) {
                     +"▶ "
                 }
@@ -28,7 +39,7 @@ class VideoListComponent(props: VideoListProps) : RComponent<VideoListProps, RSt
 interface VideoListProps : RProps {
     var videos: List<Video>
     var selectedVideo: Video?
-    var onSelectVideo: (Video)->Unit
+    var onSelectVideo: (Video) -> Unit
 
 }
 

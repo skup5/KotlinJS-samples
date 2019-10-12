@@ -9,6 +9,8 @@
     "inline-style-prefixer": "^5.1.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-player": "^1.13.0",
+    "react-share": "^3.0.1",
     "styled-components": "4"
   },
   "devDependencies": {
