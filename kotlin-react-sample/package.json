@@ -2,6 +2,7 @@
   "name": "confexplorer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://skup5.github.io/KotlinJS-samples",
   "dependencies": {
     "@jetbrains/kotlin-css": "^1.0.0-pre.83",
     "@jetbrains/kotlin-css-js": "^1.0.0-pre.83",
@@ -15,6 +16,7 @@
     "styled-components": "4"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "react-scripts-kotlin": "4.0.1"
   },
   "scripts": {
@@ -23,6 +25,8 @@
     "eject": "react-scripts-kotlin eject",
     "gen-idea-libs": "react-scripts-kotlin gen-idea-libs",
     "get-types": "react-scripts-kotlin get-types --dest=src/types",
-    "postinstall": "npm run gen-idea-libs"
+    "postinstall": "npm run gen-idea-libs",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   }
 }
