@@ -8,7 +8,7 @@ import styled.styledButton
 import styled.styledDiv
 
 /**
- *
+ * Allows play videos inside a web page.
  * @author Roman Zelenik
  */
 class VideoPlayerComponent(props: VideoPlayerProps) : RComponent<VideoPlayerProps, RState>(props) {
@@ -20,7 +20,7 @@ class VideoPlayerComponent(props: VideoPlayerProps) : RComponent<VideoPlayerProp
                 right = 10.px
             }
 
-            h3 { +"John Doe : Building and breaking things" }
+            h3 { +"${props.video.speaker}: ${props.video.title}" }
 
             styledButton {
                 css {
