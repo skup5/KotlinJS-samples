@@ -1,0 +1,1 @@
+{"version":3,"sources":["..\\App.css","..\\index.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;AACvB,C;ACFA;EACE,uBAAuB;AACzB","file":"static/css/main.4019c416.css","sourcesContent":[".SocialMediaShareButton + .SocialMediaShareButton {\r\n    margin-left: 0.5rem;\r\n}","body {\n  font-family: sans-serif;\n}\n"],"sourceRoot":""}
